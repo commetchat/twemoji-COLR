@@ -2,3 +2,7 @@ build
 v1
 node_modules
 original
+data/unicode-emoji-test.txt
+data/emoji-test.txt
+*.pyc
+twemoji/

@@ -2,7 +2,7 @@ MAKEFLAGS += --no-builtin-rules
 temp != mkdir -p build/layers
 
 twemoji_repo = https://github.com/jdecked/twemoji.git
-twemoji_commit = c82a400de008d671167a73d82cddd37de3d583e1
+twemoji_commit = b6b55fef1e8636b540a6d016a4729ca8cdf2e60b
 
 .SUFFIXES:
 
@@ -18,7 +18,7 @@ twemoji/assets/svg:
 	cd twemoji && git sparse-checkout init && git sparse-checkout set assets/svg && git checkout $(twemoji_commit)
 
 data/unicode-emoji-test.txt:
-	curl --compressed 'https://www.unicode.org/Public/emoji/15.1/emoji-test.txt' -o data/unicode-emoji-test.txt
+	curl --compressed 'https://www.unicode.org/Public/emoji/latest/emoji-test.txt' -o data/unicode-emoji-test.txt
 
 data/emoji-test.txt: data/unicode-emoji-test.txt data/twemoji-nonstandard.sed
 	sed -f data/twemoji-nonstandard.sed <data/unicode-emoji-test.txt >data/emoji-test.txt

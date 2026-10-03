@@ -151,8 +151,8 @@ export function process_svg(filename) {
 			//
 		} else if (name=="svg") {
 			if (attrs.viewBox!="0 0 36 36") {
-				//console.warn(`WRONG SVG SIZE ‘${attrs.viewBox}’`)
-				throw new Error(`WRONG SVG VIEWBOX ‘${attrs.viewBox}’`)
+				console.warn(`WRONG SVG SIZE ‘${attrs.viewBox}’`)
+				//throw new Error(`WRONG SVG VIEWBOX ‘${attrs.viewBox}’`)
 			}
 		} else if (name=="defs") {
 			inDefs = true
